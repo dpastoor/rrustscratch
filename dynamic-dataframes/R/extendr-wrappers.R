@@ -4,12 +4,18 @@
 
 #
 # This file was created with the following call:
-#   .Call("wrap__make_rrustscratch_wrappers", use_symbols = TRUE, package_name = "rrustscratch")
+#   .Call("wrap__make_dynamicdataframes_wrappers", use_symbols = TRUE, package_name = "dynamicdataframes")
 
 #' @docType package
 #' @usage NULL
-#' @useDynLib rrustscratch, .registration = TRUE
+#' @useDynLib dynamicdataframes, .registration = TRUE
 NULL
+
+#' Convert a vector of pairs into an R list.
+#' @export
+pairs_to_list <- function() .Call(wrap__pairs_to_list)
+
+pairs_to_dataframe <- function() .Call(wrap__pairs_to_dataframe)
 
 #' Return string `"Hello world!"` to R.
 #' @export
